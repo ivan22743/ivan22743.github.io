@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генератор паролів</title>
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="generator-card">
+        <h2 class="archivo-black-regular">Генератор паролів</h2>
+
+        <div class="result-container">
+            <input type="text" id="passwordResult" readonly placeholder="Пароль з'явиться тут!">
+            <button class="copy-btn" title="Натисни, щоб скопіювати">📋</button>
+        </div>
+
+        <div class="setting">
+            <span class="label-text">Довжина пароля</span>
+            <div class="input-info">Довжина: <b id="lengthValue">16</b></div>
+            <input type="range" id="length" min="4" max="20" value="16">
+        </div>
+
+        <div class="options">
+            <div class="option-item">
+                <span class="label-text">Кількість цифр</span>
+                <input type="number" id="digitCount" min="0" max="20" value="4">
+            </div>
+
+            <div class="option-item">
+                <span class="label-text">спецсимволи (!@#)</span>
+                <input type="checkbox" id="checkSymbols" class="hidden-check">
+                <label for="checkSymbols" class="custom-button">Додати символи</label>
+            </div>
+
+            <div class="option-item">
+                <span class="label-text">Великі літери (A-Z)</span>
+                <input type="checkbox" id="checkUpper" class="hidden-check" checked>
+                <label for="checkUpper" class="custom-button">Додати літери</label>
+            </div>
+        </div>
+
+        <button class="generate-btn archivo-black-regular">Генерирувати пароль</button>
+        
+    </div>
+
+    <div id="toast" class="toast archivo-black-regular">Скопійовано</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
